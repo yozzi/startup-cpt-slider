@@ -1,4 +1,4 @@
 StartUp CPT Slider
 ===
 
-Hi. I'm a WordPress plugin that adds a Custom Post Type designed to be used with StartUp Reloaded Wordpress theme.
+Hi. I'm a WordPress plugin that adds a Custom Post Type designed to be used with StartUp Reloaded WordPress theme.
