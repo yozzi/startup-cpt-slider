@@ -42,17 +42,41 @@ function startup_reloaded_slider() {
 		'has_archive'         => true,
 		'exclude_from_search' => true,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'page'
+        'capability_type'     => array('slide','slides'),
+        'map_meta_cap'        => true
 	);
 	register_post_type( 'slider', $args );
 
 }
 add_action( 'init', 'startup_reloaded_slider', 0 );
 
-// Metaboxes
-add_action( 'cmb2_init', 'startup_reloaded_metabox_slider' );
+// Capabilities
 
-function startup_reloaded_metabox_slider() {
+register_activation_hook( __FILE__, 'startup_reloaded_slider_caps' );
+
+function startup_reloaded_slider_caps() {
+	
+	$role_admin = get_role( 'administrator' );
+	
+	$role_admin->add_cap( 'edit_slide' );
+	$role_admin->add_cap( 'read_slide' );
+	$role_admin->add_cap( 'delete_slide' );
+	$role_admin->add_cap( 'edit_others_slides' );
+	$role_admin->add_cap( 'publish_slides' );
+	$role_admin->add_cap( 'edit_slides' );
+	$role_admin->add_cap( 'read_private_slides' );
+	$role_admin->add_cap( 'delete_slides' );
+	$role_admin->add_cap( 'delete_private_slides' );
+	$role_admin->add_cap( 'delete_published_slides' );
+	$role_admin->add_cap( 'delete_others_slides' );
+	$role_admin->add_cap( 'edit_private_slides' );
+	$role_admin->add_cap( 'edit_published_slides' );
+}
+
+// Metaboxes
+add_action( 'cmb2_init', 'startup_reloaded_slider_meta' );
+
+function startup_reloaded_slider_meta() {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_startup_reloaded_slider_';
 
