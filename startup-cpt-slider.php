@@ -42,7 +42,7 @@ function startup_reloaded_slider() {
 		'has_archive'         => true,
 		'exclude_from_search' => true,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'slider'
+		'capability_type'     => 'page'
 	);
 	register_post_type( 'slider', $args );
 
