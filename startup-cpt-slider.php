@@ -8,7 +8,6 @@ Version: 1.1
 
 //CPT
 function startup_reloaded_slider() {
-
 	$labels = array(
 		'name'                => 'Slides',
 		'singular_name'       => 'Slide',
@@ -48,16 +47,12 @@ function startup_reloaded_slider() {
 	register_post_type( 'slider', $args );
 
 }
+
 add_action( 'init', 'startup_reloaded_slider', 0 );
 
 // Capabilities
-
-register_activation_hook( __FILE__, 'startup_reloaded_slider_caps' );
-
 function startup_reloaded_slider_caps() {
-	
 	$role_admin = get_role( 'administrator' );
-	
 	$role_admin->add_cap( 'edit_slide' );
 	$role_admin->add_cap( 'read_slide' );
 	$role_admin->add_cap( 'delete_slide' );
@@ -73,8 +68,9 @@ function startup_reloaded_slider_caps() {
 	$role_admin->add_cap( 'edit_published_slides' );
 }
 
+register_activation_hook( __FILE__, 'startup_reloaded_slider_caps' );
+
 // Metaboxes
-add_action( 'cmb2_init', 'startup_reloaded_slider_meta' );
 
 function startup_reloaded_slider_meta() {
 	// Start with an underscore to hide fields from custom fields list
@@ -203,4 +199,6 @@ function startup_reloaded_slider_meta() {
 		'type'       => 'text'
 	) );
 }
+
+add_action( 'cmb2_init', 'startup_reloaded_slider_meta' );
 ?>
