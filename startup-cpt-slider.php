@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: StartUp Slider Custom Post
+Plugin Name: StartUp Slider Custom Post Type
 Description: Le plugin pour activer le Custom Post Slider
 Author: Yann Caplain
-Version: 1.1.0
+Version: 1.2.0
 */
 
 //CPT
