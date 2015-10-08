@@ -149,6 +149,18 @@ function startup_reloaded_slider_meta() {
     ) );
     
     $cmb_box->add_field( array(
+		'name'             => __( 'Background image position', 'cmb2' ),
+		'id'               => $prefix . 'background_position',
+		'type'             => 'select',
+        'default'          => 'center',
+		'options'          => array(
+			'top' => __( 'Top', 'cmb2' ),
+			'center'   => __( 'Center', 'cmb2' ),
+			'bottom'     => __( 'Bottom', 'cmb2' )
+		)
+	) );
+    
+    $cmb_box->add_field( array(
         'name'    => __( 'Video', 'cmb2' ),
         'desc'             => __( 'YouTube url for background video. Always use in first slide only to prevent CPU load.', 'cmb2' ),
         'id'      => $prefix . 'background_video',
