@@ -74,7 +74,7 @@ function startup_reloaded_slider() {
 
 add_action( 'init', 'startup_reloaded_slider', 0 );
 
-//Flusher les permalink à l'activation du plgin pour qu'ils fonctionnent sans mise à jour manuelle
+//Flusher les permalink à l'activation du plugin pour qu'ils fonctionnent sans mise à jour manuelle
 function startup_reloaded_slider_rewrite_flush() {
     startup_reloaded_slider();
     flush_rewrite_rules();
