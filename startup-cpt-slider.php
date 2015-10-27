@@ -244,5 +244,5 @@ function startup_reloaded_slider_meta() {
 	) );
 }
 
-add_action( 'cmb2_init', 'startup_reloaded_slider_meta' );
+add_action( 'cmb2_admin_init', 'startup_reloaded_slider_meta' );
 ?>
