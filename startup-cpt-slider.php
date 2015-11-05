@@ -248,9 +248,17 @@ function startup_reloaded_slider_meta() {
 add_action( 'cmb2_admin_init', 'startup_reloaded_slider_meta' );
 
 // Shortcode
-add_shortcode( 'slider', function( $atts, $content= null ){
+function startup_reloaded_slider_shortcode( $atts ) {
+
+	// Attributes
+    $atts = shortcode_atts(array(
+            'shortcode' => 'true'
+        ), $atts);
+    
+	// Code
     ob_start();
     require get_template_directory() . '/template-parts/slider-home.php';
-    return ob_get_clean();
-});
+    return ob_get_clean();       
+}
+add_shortcode( 'slider', 'startup_reloaded_slider_shortcode' );
 ?>
