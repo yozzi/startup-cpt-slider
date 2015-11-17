@@ -34,24 +34,25 @@ add_action( 'init', 'startup_reloaded_slider_updater' );
 //CPT
 function startup_reloaded_slider() {
 	$labels = array(
-		'name'                => 'Slides',
-		'singular_name'       => 'Slide',
-		'menu_name'           => 'Slider',
-		'name_admin_bar'      => 'Slider',
-		'parent_item_colon'   => 'Parent Item:',
-		'all_items'           => 'All Items',
-		'add_new_item'        => 'Add New Item',
-		'add_new'             => 'Add New',
-		'new_item'            => 'New Item',
-		'edit_item'           => 'Edit Item',
-		'update_item'         => 'Update Item',
-		'view_item'           => 'View Item',
-		'search_items'        => 'Search Item',
-		'not_found'           => 'Not found',
-		'not_found_in_trash'  => 'Not found in Trash'
+        'name'                => _x( 'Slides', 'Post Type General Name', 'startup-cpt-slider' ),
+		'singular_name'       => _x( 'Slide', 'Post Type Singular Name', 'startup-cpt-slider' ),
+		'menu_name'           => __( 'Slider', 'startup-cpt-slider' ),
+		'name_admin_bar'      => __( 'Slider', 'startup-cpt-slider' ),
+		'parent_item_colon'   => __( 'Parent Item:', 'startup-cpt-slider' ),
+		'all_items'           => __( 'All Items', 'startup-cpt-slider' ),
+		'add_new_item'        => __( 'Add New Item', 'startup-cpt-slider' ),
+		'add_new'             => __( 'Add New', 'startup-cpt-slider' ),
+		'new_item'            => __( 'New Item', 'startup-cpt-slider' ),
+		'edit_item'           => __( 'Edit Item', 'startup-cpt-slider' ),
+		'update_item'         => __( 'Update Item', 'startup-cpt-slider' ),
+		'view_item'           => __( 'View Item', 'startup-cpt-slider' ),
+		'search_items'        => __( 'Search Item', 'startup-cpt-slider' ),
+		'not_found'           => __( 'Not found', 'startup-cpt-slider' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'startup-cpt-slider' )
 	);
 	$args = array(
-		'label'               => 'slider',
+        'label'               => __( 'slider', 'startup-cpt-slider' ),
+		'description'         => __( '', 'startup-cpt-slider' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions' ),
 		'hierarchical'        => true,
@@ -111,85 +112,85 @@ function startup_reloaded_slider_meta() {
 
 	$cmb_box = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Slide details', 'cmb2' ),
+		'title'         => __( 'Slide details', 'startup-cpt-slider' ),
 		'object_types'  => array( 'slider' )
 	) );
     
     $cmb_box->add_field( array(
-		'name'             => __( 'Content position', 'cmb2' ),
+		'name'             => __( 'Content position', 'startup-cpt-slider' ),
 		'id'               => $prefix . 'position',
 		'type'             => 'select',
 		'show_option_none' => false,
         'default'          => 'center',
 		'options'          => array(
-			'left' => __( 'Left', 'cmb2' ),
-			'center'   => __( 'Center', 'cmb2' ),
-			'right'     => __( 'Right', 'cmb2' )
+			'left' => __( 'Left', 'startup-cpt-slider' ),
+			'center'   => __( 'Center', 'startup-cpt-slider' ),
+			'right'     => __( 'Right', 'startup-cpt-slider' )
 		)
 	) );
     
      $cmb_box->add_field( array(
-		'name'             => __( 'Effect', 'cmb2' ),
+		'name'             => __( 'Effect', 'startup-cpt-slider' ),
 		'id'               => $prefix . 'effect',
 		'type'             => 'select',
 		'show_option_none' => 'none',
         'default'          => 'none',
 		'options'          => array(
-			'light' => __( 'Light', 'cmb2' ),
-			'dark'   => __( 'Dark', 'cmb2' ),
-			'trame-01'     => __( 'Trame 1', 'cmb2' ),
-            'trame-02'     => __( 'Trame 2', 'cmb2' )
+			'light' => __( 'Light', 'startup-cpt-slider' ),
+			'dark'   => __( 'Dark', 'startup-cpt-slider' ),
+			'trame-01'     => __( 'Trame 1', 'startup-cpt-slider' ),
+            'trame-02'     => __( 'Trame 2', 'startup-cpt-slider' )
 		)
 	) );
     
     $cmb_box->add_field( array(
-        'name'    => __( 'Background color', 'cmb2' ),
+        'name'    => __( 'Background color', 'startup-cpt-slider' ),
         'id'      => $prefix . 'background_color',
         'type'    => 'colorpicker',
         'default' => '#fff'
     ) );
     
     $cmb_box->add_field( array(
-		'name'             => __( 'Background image position', 'cmb2' ),
+		'name'             => __( 'Background image position', 'startup-cpt-slider' ),
 		'id'               => $prefix . 'background_position',
 		'type'             => 'select',
         'default'          => 'center',
 		'options'          => array(
-			'top' => __( 'Top', 'cmb2' ),
-			'center'   => __( 'Center', 'cmb2' ),
-			'bottom'     => __( 'Bottom', 'cmb2' )
+			'top' => __( 'Top', 'startup-cpt-slider' ),
+			'center'   => __( 'Center', 'startup-cpt-slider' ),
+			'bottom'     => __( 'Bottom', 'startup-cpt-slider' )
 		)
 	) );
     
     $cmb_box->add_field( array(
-        'name'    => __( 'Video', 'cmb2' ),
-        'desc'             => __( 'YouTube url for background video. Always use in first slide only to prevent CPU load.', 'cmb2' ),
+        'name'    => __( 'Video', 'startup-cpt-slider' ),
+        'desc'             => __( 'YouTube url for background video. Always use in first slide only to prevent CPU load.', 'startup-cpt-slider' ),
         'id'      => $prefix . 'background_video',
         'type'    => 'text'
     ) );
     
     $cmb_box->add_field( array(
-		'name'             => __( 'Boxed', 'cmb2' ),
-        'desc'             => __( 'Put the text inside a box', 'cmb2' ),
+		'name'             => __( 'Boxed', 'startup-cpt-slider' ),
+        'desc'             => __( 'Put the text inside a box', 'startup-cpt-slider' ),
 		'id'               => $prefix . 'boxed',
 		'type'             => 'checkbox'
 	) );
     
     $cmb_box->add_field( array(
-		'name'       => __( 'Button text', 'cmb2' ),
+		'name'       => __( 'Button text', 'startup-cpt-slider' ),
 		'id'         => $prefix . 'button_text',
 		'type'       => 'text'
 	) );
     
     $cmb_box->add_field( array(
-		'name'       => __( 'Button url', 'cmb2' ),
+		'name'       => __( 'Button url', 'startup-cpt-slider' ),
 		'id'         => $prefix . 'button_url',
 		'type'       => 'text'
 	) );
     
     $cmb_box->add_field( array(
-		'name'             => __( 'Button target', 'cmb2' ),
-        'desc'             => __( '_blank', 'cmb2' ),
+		'name'             => __( 'Button target', 'startup-cpt-slider' ),
+        'desc'             => __( '_blank', 'startup-cpt-slider' ),
 		'id'               => $prefix . 'blank',
 		'type'             => 'checkbox'
 	) );
@@ -197,7 +198,7 @@ function startup_reloaded_slider_meta() {
     require get_template_directory() . '/inc/animate-css.php';
     
     $cmb_box->add_field( array(
-		'name'             => __( 'Title animation', 'cmb2' ),
+		'name'             => __( 'Title animation', 'startup-cpt-slider' ),
 		'id'               => $prefix . 'title_animation',
 		'type'             => 'select',
 		'show_option_none' => 'none',
@@ -206,14 +207,14 @@ function startup_reloaded_slider_meta() {
 	) );
     
     $cmb_box->add_field( array(
-		'name'       => __( 'Title delay', 'cmb2' ),
-        'desc'             => __( 'in ms', 'cmb2' ),
+		'name'       => __( 'Title delay', 'startup-cpt-slider' ),
+        'desc'             => __( 'in ms', 'startup-cpt-slider' ),
 		'id'         => $prefix . 'title_delay',
 		'type'       => 'text'
 	) );
     
     $cmb_box->add_field( array(
-		'name'             => __( 'Content animation', 'cmb2' ),
+		'name'             => __( 'Content animation', 'startup-cpt-slider' ),
 		'id'               => $prefix . 'content_animation',
 		'type'             => 'select',
 		'show_option_none' => 'none',
@@ -222,14 +223,14 @@ function startup_reloaded_slider_meta() {
 	) );
     
     $cmb_box->add_field( array(
-		'name'       => __( 'Content delay', 'cmb2' ),
-        'desc'             => __( 'in ms', 'cmb2' ),
+		'name'       => __( 'Content delay', 'startup-cpt-slider' ),
+        'desc'             => __( 'in ms', 'startup-cpt-slider' ),
 		'id'         => $prefix . 'content_delay',
 		'type'       => 'text'
 	) );
     
     $cmb_box->add_field( array(
-		'name'             => __( 'Button animation', 'cmb2' ),
+		'name'             => __( 'Button animation', 'startup-cpt-slider' ),
 		'id'               => $prefix . 'button_animation',
 		'type'             => 'select',
 		'show_option_none' => 'none',
@@ -238,8 +239,8 @@ function startup_reloaded_slider_meta() {
 	) );
     
     $cmb_box->add_field( array(
-		'name'       => __( 'Button delay', 'cmb2' ),
-        'desc'             => __( 'in ms', 'cmb2' ),
+		'name'       => __( 'Button delay', 'startup-cpt-slider' ),
+        'desc'             => __( 'in ms', 'startup-cpt-slider' ),
 		'id'         => $prefix . 'button_delay',
 		'type'       => 'text'
 	) );
