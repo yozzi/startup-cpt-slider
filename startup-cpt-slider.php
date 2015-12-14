@@ -253,6 +253,7 @@ function startup_cpt_slider_shortcode( $atts ) {
 add_shortcode( 'slider', 'startup_cpt_slider_shortcode' );
 // Enqueue scripts and styles.
 function startup_cpt_slider_scripts() {
+    wp_enqueue_script( 'startup-cpt-slider-scripts', plugins_url( '/js/startup-cpt-slider.js', __FILE__ ), array( ), '', true );
     wp_enqueue_style( 'startup-cpt-slider-style', plugins_url( '/css/startup-cpt-slider.css', __FILE__ ), array( ), false, 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'startup_cpt_slider_scripts', 15 );
