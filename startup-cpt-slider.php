@@ -7,11 +7,6 @@ Version: 1.3.0
 Text Domain: startup-cpt-slider
 */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
-
 //GitHub Plugin Updater
 function startup_cpt_slider_updater() {
 	include_once 'lib/updater.php';
