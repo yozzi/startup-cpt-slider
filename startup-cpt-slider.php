@@ -6,7 +6,10 @@ Author: Yann Caplain
 Version: 1.3.0
 Text Domain: startup-cpt-slider
 */
-
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 //GitHub Plugin Updater
 function startup_cpt_slider_updater() {
 	include_once 'lib/updater.php';
@@ -28,9 +31,7 @@ function startup_cpt_slider_updater() {
 		new WP_GitHub_Updater( $config );
 	}
 }
-
 //add_action( 'init', 'startup_cpt_slider_updater' );
-
 //CPT
 function startup_cpt_slider() {
 	$labels = array(
@@ -71,19 +72,14 @@ function startup_cpt_slider() {
         'map_meta_cap'        => true
 	);
 	register_post_type( 'slider', $args );
-
 }
-
 add_action( 'init', 'startup_cpt_slider', 0 );
-
 //Flusher les permalink à l'activation du plugin pour qu'ils fonctionnent sans mise à jour manuelle
 function startup_cpt_slider_rewrite_flush() {
     startup_cpt_slider();
     flush_rewrite_rules();
 }
-
 register_activation_hook( __FILE__, 'startup_cpt_slider_rewrite_flush' );
-
 // Capabilities
 function startup_cpt_slider_caps() {
 	$role_admin = get_role( 'administrator' );
@@ -101,15 +97,11 @@ function startup_cpt_slider_caps() {
 	$role_admin->add_cap( 'edit_private_slides' );
 	$role_admin->add_cap( 'edit_published_slides' );
 }
-
 register_activation_hook( __FILE__, 'startup_cpt_slider_caps' );
-
 // Metaboxes
-
 function startup_cpt_slider_meta() {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_startup_cpt_slider_';
-
 	$cmb_box = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
 		'title'         => __( 'Slide details', 'startup-cpt-slider' ),
@@ -245,12 +237,9 @@ function startup_cpt_slider_meta() {
 		'type'       => 'text'
 	) );
 }
-
 add_action( 'cmb2_admin_init', 'startup_cpt_slider_meta' );
-
 // Shortcode
 function startup_cpt_slider_shortcode( $atts ) {
-
 	// Attributes
     $atts = shortcode_atts(array(
             'shortcode' => 'true'
@@ -262,46 +251,9 @@ function startup_cpt_slider_shortcode( $atts ) {
     return ob_get_clean();       
 }
 add_shortcode( 'slider', 'startup_cpt_slider_shortcode' );
-
-// Shortcode UI
-/**
- * Detecion de Shortcake. Identique dans tous les plugins.
- */
-if ( !function_exists( 'shortcode_ui_detection' ) ) {
-    function shortcode_ui_detection() {
-        if ( !function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
-            add_action( 'admin_notices', 'shortcode_ui_notice' );
-        }
-    }
-
-    function shortcode_ui_notice() {
-        if ( current_user_can( 'activate_plugins' ) ) {
-            echo '<div class="error message"><p>Shortcode UI plugin must be active to use fast shortcodes.</p></div>';
-        }
-    }
-
-add_action( 'init', 'shortcode_ui_detection' );
-}
-
-function startup_cpt_slider_shortcode_ui() {
-
-    shortcode_ui_register_for_shortcode(
-        'slider',
-        array(
-            'label' => esc_html__( 'Slider', 'startup-cpt-slider' ),
-            'listItemImage' => 'dashicons-format-gallery',
-        )
-    );
-};
-
-if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
-    add_action( 'init', 'startup_cpt_slider_shortcode_ui');
-}
-
 // Enqueue scripts and styles.
 function startup_cpt_slider_scripts() {
     wp_enqueue_style( 'startup-cpt-slider-style', plugins_url( '/css/startup-cpt-slider.css', __FILE__ ), array( ), false, 'all' );
 }
-
-add_action( 'wp_enqueue_scripts', 'startup_cpt_slider_scripts',15 );
+add_action( 'wp_enqueue_scripts', 'startup_cpt_slider_scripts', 15 );
 ?>
