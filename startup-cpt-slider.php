@@ -267,7 +267,8 @@ if ( !function_exists( 'shortcode_ui_detection' ) ) {
             echo '<div class="error message"><p>' . __( 'Shortcake plugin must be active to use fast shortcodes.', 'startup-cpt-slider' ) . '</p></div>';
         }
     }
-add_action( 'init', 'shortcode_ui_detection' );
+    
+    add_action( 'init', 'shortcode_ui_detection' );
 }
 function startup_cpt_slider_shortcode_ui() {
     shortcode_ui_register_for_shortcode(
