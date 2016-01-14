@@ -1,0 +1,237 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: StartUp CPT Slider\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Thu Jan 14 2016 09:14:12 GMT-0500 (Est)\n"
+"POT-Revision-Date: Thu Jan 14 2016 09:14:14 GMT-0500 (Est)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the plugin
+msgid "StartUp CPT Slider"
+msgstr ""
+
+#. Description of the plugin
+msgid "Le plugin pour activer le Custom Post Slider"
+msgstr ""
+
+#. Author of the plugin
+msgid "Yann Caplain"
+msgstr ""
+
+#: ../startup-cpt-slider.php:39
+msgctxt "Post Type General Name"
+msgid "Slides"
+msgstr ""
+
+#: ../startup-cpt-slider.php:40
+msgctxt "Post Type Singular Name"
+msgid "Slide"
+msgstr ""
+
+#: ../startup-cpt-slider.php:41 ../startup-cpt-slider.php:42 ../startup-cpt-
+#: slider.php:298
+msgid "Slider"
+msgstr ""
+
+#: ../startup-cpt-slider.php:43
+msgid "Parent Item:"
+msgstr ""
+
+#: ../startup-cpt-slider.php:44
+msgid "All Items"
+msgstr ""
+
+#: ../startup-cpt-slider.php:45
+msgid "Add New Item"
+msgstr ""
+
+#: ../startup-cpt-slider.php:46
+msgid "Add New"
+msgstr ""
+
+#: ../startup-cpt-slider.php:47
+msgid "New Item"
+msgstr ""
+
+#: ../startup-cpt-slider.php:48
+msgid "Edit Item"
+msgstr ""
+
+#: ../startup-cpt-slider.php:49
+msgid "Update Item"
+msgstr ""
+
+#: ../startup-cpt-slider.php:50
+msgid "View Item"
+msgstr ""
+
+#: ../startup-cpt-slider.php:51
+msgid "Search Item"
+msgstr ""
+
+#: ../startup-cpt-slider.php:52
+msgid "Not found"
+msgstr ""
+
+#: ../startup-cpt-slider.php:53
+msgid "Not found in Trash"
+msgstr ""
+
+#: ../startup-cpt-slider.php:56
+msgid "slider"
+msgstr ""
+
+#: ../startup-cpt-slider.php:116
+msgid "CMB2 plugin or StartUp Reloaded theme must be active to use custom metaboxes."
+msgstr ""
+
+#: ../startup-cpt-slider.php:128
+msgid "Slide details"
+msgstr ""
+
+#: ../startup-cpt-slider.php:133
+msgid "Content position"
+msgstr ""
+
+#: ../startup-cpt-slider.php:139
+msgid "Left"
+msgstr ""
+
+#: ../startup-cpt-slider.php:140 ../startup-cpt-slider.php:173
+msgid "Center"
+msgstr ""
+
+#: ../startup-cpt-slider.php:141
+msgid "Right"
+msgstr ""
+
+#: ../startup-cpt-slider.php:146
+msgid "Effect"
+msgstr ""
+
+#: ../startup-cpt-slider.php:152
+msgid "Light"
+msgstr ""
+
+#: ../startup-cpt-slider.php:153
+msgid "Dark"
+msgstr ""
+
+#: ../startup-cpt-slider.php:154
+msgid "Trame 1"
+msgstr ""
+
+#: ../startup-cpt-slider.php:155
+msgid "Trame 2"
+msgstr ""
+
+#: ../startup-cpt-slider.php:160
+msgid "Background color"
+msgstr ""
+
+#: ../startup-cpt-slider.php:167
+msgid "Background image position"
+msgstr ""
+
+#: ../startup-cpt-slider.php:172
+msgid "Top"
+msgstr ""
+
+#: ../startup-cpt-slider.php:174
+msgid "Bottom"
+msgstr ""
+
+#: ../startup-cpt-slider.php:179
+msgid "Video"
+msgstr ""
+
+#: ../startup-cpt-slider.php:180
+msgid ""
+"YouTube url for background video. Always use in first slide only to prevent "
+"CPU load."
+msgstr ""
+
+#: ../startup-cpt-slider.php:186
+msgid "Boxed"
+msgstr ""
+
+#: ../startup-cpt-slider.php:187
+msgid "Put the text inside a box"
+msgstr ""
+
+#: ../startup-cpt-slider.php:193
+msgid "Button text"
+msgstr ""
+
+#: ../startup-cpt-slider.php:199
+msgid "Button url"
+msgstr ""
+
+#: ../startup-cpt-slider.php:205
+msgid "Button target"
+msgstr ""
+
+#: ../startup-cpt-slider.php:206
+msgid "_blank"
+msgstr ""
+
+#: ../startup-cpt-slider.php:214
+msgid "Title animation"
+msgstr ""
+
+#: ../startup-cpt-slider.php:223
+msgid "Title delay"
+msgstr ""
+
+#: ../startup-cpt-slider.php:224 ../startup-cpt-slider.php:240 ../startup-cpt-
+#: slider.php:256
+msgid "in ms"
+msgstr ""
+
+#: ../startup-cpt-slider.php:230
+msgid "Content animation"
+msgstr ""
+
+#: ../startup-cpt-slider.php:239
+msgid "Content delay"
+msgstr ""
+
+#: ../startup-cpt-slider.php:246
+msgid "Button animation"
+msgstr ""
+
+#: ../startup-cpt-slider.php:255
+msgid "Button delay"
+msgstr ""
+
+#: ../startup-cpt-slider.php:288
+msgid "Shortcake plugin must be active to use fast shortcodes."
+msgstr ""
+
+#: ../lib/updater.php:434
+msgid ""
+"The plugin has been updated, but could not be reactivated. Please reactivate "
+"it manually."
+msgstr ""
+
+#: ../lib/updater.php:435
+msgid "Plugin reactivated successfully."
+msgstr ""
