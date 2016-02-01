@@ -11,6 +11,10 @@ Domain Path: /languages
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+//Include this to check if a plugin is activated with is_plugin_active
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 //GitHub Plugin Updater
 function startup_cpt_slider_updater() {
 	include_once 'lib/updater.php';
