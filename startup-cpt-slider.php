@@ -272,8 +272,12 @@ function startup_cpt_slider_shortcode( $atts ) {
     
 	// Code
     ob_start();
-    require get_template_directory() . '/template-parts/slider-home.php';
-    return ob_get_clean();       
+    if ( function_exists( 'startup_reloaded_setup' ) ) {
+        require get_template_directory() . '/template-parts/slider-home.php';
+     } else {
+        echo 'Should <a href="https://github.com/yozzi/startup-reloaded" target="_blank">install StartUp Reloaded Theme</a> to make things happen...';
+     }
+     return ob_get_clean();       
 }
 add_shortcode( 'slider', 'startup_cpt_slider_shortcode' );
 
