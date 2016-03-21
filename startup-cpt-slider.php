@@ -212,7 +212,7 @@ function startup_cpt_slider_meta() {
 		'type'             => 'checkbox'
 	) );
     
-    require get_template_directory() . '/inc/animate-css.php';
+    require ABSPATH . 'wp-content/plugins/startup-cpt-slider/inc/animate-css.php';
     
     $cmb_box->add_field( array(
 		'name'             => __( 'Title animation', 'startup-cpt-slider' ),
@@ -279,7 +279,7 @@ add_shortcode( 'slider', 'startup_cpt_slider_shortcode' );
 
 // Shortcode UI
 /**
- * Detecion de Shortcake. Identique dans tous les plugins.
+ * Detection de Shortcake. Identique dans tous les plugins.
  */
 if ( !function_exists( 'shortcode_ui_detection' ) ) {
     function shortcode_ui_detection() {
